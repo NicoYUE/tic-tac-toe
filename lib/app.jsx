@@ -27,4 +27,19 @@ var Box = React.createClass({
   }
 });
 
-React.render(<Box initialvalue ='Step 6' />, document.body);
+ var Row = React.createClass({
+
+   'render': function onRender () {
+     return (
+ 	<div>
+ 	      <Box initialvalue="Step 7" />
+ 		<Box initialvalue="Step 7" />
+ 		<Box initialvalue="Step 7" />
+ 	</div>
+
+     );
+   }
+
+ });
+
+ React.render(<Row/>, document.body);
