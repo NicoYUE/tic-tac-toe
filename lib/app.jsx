@@ -13,21 +13,18 @@ var Box = React.createClass({
   return {value: this.props.initialvalue}
   },
 
-  componentWillMount: function() {
+  handleClick: function() {
   		var current = this;
-  	    this.timer = setInterval(function(){
-  			var oldValue = current.state.value;
-  			var newValue;
-  			if(oldValue === 'X'){newValue = 'O';}else{newValue='X';}
-  			current.setState({ value:newValue});
-  		},1000);
+  	   var oldValue = current.state.value;
+       var newValue = oldValue === 'X' ? 'O' : 'X';
+       current.setState({value:newValue})
   	  },
 
   'render': function onRender () {
     return (
-      <button style ={boxStyle}>{this.state.value}</button>
+      <button style ={boxStyle} onClick={this.handleClick}>{this.state.value}</button>
     );
   }
 });
 
-React.render(<Box initialvalue ='Y' />, document.body);
+React.render(<Box initialvalue ='Step 6' />, document.body);
